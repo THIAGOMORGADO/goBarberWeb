@@ -1,4 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
+import 'react-perfect-scrollbar/dist/css/styles.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;1,700&display=swap');
@@ -22,7 +24,7 @@ export default createGlobalStyle`
     font: 14px 'Roboto', sans-serif;
   }
   a {
-    text-text-decoration: none;
+    text-decoration: none;
   }
   ul {
     list-style: none

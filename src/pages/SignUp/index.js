@@ -1,8 +1,10 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Form, Input } from '@rocketseat/unform';
+
 import * as Yup from 'yup';
-// import { Container } from 'styled-components';
+import { signUpRequest } from '~/store/modules/auth/actions';
 import Logo from '~/assets/logo.svg';
 
 const Schema = Yup.object().shape({
@@ -14,10 +16,10 @@ const Schema = Yup.object().shape({
     .min(6, 'A senha tem que ter  6 caracteres')
     .required('A senha e obrigatoria'),
 });
-
-export default function SignIn() {
-  function handleSubmit(data) {
-    console.tron.log(data);
+export default function SignUp() {
+  const dispatch = useDispatch();
+  function handleSubmit({ name, email, password }) {
+    dispatch(signUpRequest(name, email, password));
   }
   return (
     <>
